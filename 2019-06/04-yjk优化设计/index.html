@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>yjk优化设计 - 前路迷茫</title><meta description="个人博客，记录思考。"><meta property="og:type" content="blog"><meta property="og:title" content="yjk优化设计"><meta property="og:url" content="https://librix.github.io/2019-06/04-yjk%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1/"><meta property="og:site_name" content="项脊轩"><meta property="og:description" content="个人博客，记录思考。"><meta property="og:image" content="https://librix.github.io/img/og_image.png"><meta property="article:published_time" content="2019-06-03T16:00:00.000Z"><meta property="article:modified_time" content="2020-05-19T16:09:02.677Z"><meta property="article:author" content="librix123"><meta property="article:tag" content="yjk"><meta property="article:tag" content="土木"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><meta property="twitter:creator" content="@librix123"><meta property="twitter:site" content="https://twitter.com/librix123"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://librix.github.io/2019-06/04-yjk%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1/"},"headline":"哈哈哈哈","image":["https://librix.github.io/img/og_image.png"],"datePublished":"2019-06-03T16:00:00.000Z","dateModified":"2020-05-19T16:09:02.677Z","author":{"@type":"Person","name":"librix123"},"description":"EEE"}</script><link rel="canonical" href="https://librix.github.io/2019-06/04-yjk%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1/"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">项脊轩</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Suche" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2019-06-03T16:00:00.000Z" title="2019-06-03T16:00:00.000Z">2019-06-04</time><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><span> / </span><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/">软件指南</a></span><span class="level-item">12 minutes lesen (Über 1777 Worte)</span></div></div><h1 class="title is-3 is-size-4-mobile">yjk优化设计</h1><div class="content"><p>提高结构性能避免安全隐患的计算改进</p>
+<p>1.包络设计：</p>
+<ul>
+<li><p>多塔：合塔计算和分塔计算（《高规》5.1.14）</p>
+</li>
+<li><ul>
+<li>「包络设计」「结果较大值」</li>
+<li>『计算简图』『自动分塔示意』可自定义分塔</li>
+<li>「显示多塔取大构件」合塔控制的构件</li>
+</ul>
+</li>
+<li><p>楼梯：考虑楼梯构件影响&amp;不计楼梯构件影响（地震时，楼梯是一栋楼里面最安全的地方）</p>
+</li>
+<li><ul>
+<li>「包络设计」「与其他模型进行包络设计」</li>
+<li>正截面，斜截面</li>
+</ul>
+</li>
+<li><p>少墙框架的自动包络计算</p>
+</li>
+<li><ul>
+<li>软件按框架计算时，对剪力墙的<strong>弯曲刚度</strong>折减系数。</li>
+<li>软件<strong>不能</strong>对剪力墙的轴向刚度可抗剪刚度进行折减。（机构）</li>
+<li>「设计结果」「少墙框架」</li>
+</ul>
+</li>
+<li><p>多遇地震计算、大震（中震）弹性、大震（中震）不屈服设计</p>
+</li>
+<li><ul>
+<li>中震不屈服设计：前处理「楼层属性」「包络设计构件」</li>
+<li>计算「只包络设计」 「显示取大」</li>
+</ul>
+</li>
+<li><p>刚性连接上连接体</p>
+</li>
+</ul>
+<ol>
+<li>多模型</li>
+</ol>
+<ul>
+<li><p>剪力墙连梁刚度的折减，仅适用于地震效应工况；其余工况不宜折减。</p>
+</li>
+<li><ul>
+<li>连梁刚度不折减组成总刚，非地震工况计算。</li>
+<li>连梁刚度折减组成总刚，地震抗震计算。</li>
+</ul>
+</li>
+<li><p>整体指标（强制刚性板假定），内力、位移、配筋（非刚性板假定）</p>
+</li>
+<li><p>强制刚性</p>
+</li>
+<li><ul>
+<li>坡屋面、错层结构、开大洞口楼层、越层柱、越层支撑，按刚性楼板假定计算<strong>周期比、位移比</strong>。</li>
+<li>刚性平面：只有整体平面位移，层间杆件只有整体的平动、转动。</li>
+</ul>
+</li>
+<li><p>层间突变形成的薄弱层 &amp;&amp; 层间受剪承载力突变形成薄弱层</p>
+</li>
+<li><ul>
+<li><strong>层间受剪承载力突变形成薄弱层</strong> 构件<strong>截面配筋</strong>查看。</li>
+</ul>
+</li>
+<li><p>抗震墙连梁刚度折减</p>
+</li>
+<li><ul>
+<li>地震内力：连梁刚度折减</li>
+<li>位移：连梁刚度可不折减，意思是出现<strong>位移较大时</strong>。</li>
+</ul>
+</li>
+<li><p><strong>最不利地震方向</strong>地震作用</p>
+</li>
+</ul>
+<p>3.有限元力学模型概念</p>
+<ul>
+<li>MPC 多点约束：避免使用惩罚函数造成的矩阵病态等问题。</li>
+<li>子空间迭代法</li>
+<li>Ritz向量法：荷载空间分布，忽略不参与响应振型。【大型结构动态响应】</li>
+<li>Lanczos法</li>
+</ul>
+<p>结构失稳 = 屈曲（屈曲荷载、破坏形态） = 广义特征值</p>
+<p>二阶效应系数 = 屈曲因子的倒数</p>
+<p>比例阻尼、振型阻尼、古典阻尼矩阵、分离模态、基于应变能的阻尼比计算（抗规10.2）</p>
+<ul>
+<li><p>重力二阶效应</p>
+</li>
+<li><ul>
+<li><p>几何刚度矩阵</p>
+</li>
+<li><ul>
+<li>壳元的几何刚度矩阵（剪力墙）</li>
+<li>杆元的几何刚度矩阵</li>
+<li>空间梁元的几何刚度矩阵（一维构件：弯矩、偏心）</li>
+</ul>
+</li>
+<li><p>竖向工况应力状态计算</p>
+</li>
+<li><ul>
+<li>yjk：竖向恒载、活载计算和组合结果</li>
+<li>竖向构件顶点质量</li>
+<li>用户指定应力状态</li>
+</ul>
+</li>
+<li><p>重力二阶效应计算过程</p>
+</li>
+</ul>
+</li>
+<li><p>弹性连接「前处理」「节点属性」「单点约束」</p>
+</li>
+<li><ul>
+<li><p>滑动连接</p>
+</li>
+<li><p>滑动支座 （X平动刚度为零）</p>
+</li>
+<li><p>减震隔震装置</p>
+</li>
+<li><p>其他概念</p>
+</li>
+<li><ul>
+<li>屈曲约束支撑</li>
+<li>阻尼器 </li>
+<li>塑性单元（wen）</li>
+<li>隔震支座</li>
+<li>间隙：有效刚度、有效阻尼、刚度、间隙</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>膜单元</p>
+</li>
+<li><ul>
+<li><p>QA4 经典膜单元</p>
+</li>
+<li><ul>
+<li>带旋转自由度的精华非协调平面四边形等参</li>
+<li>QA4，Allman       陈万吉、龙驭球</li>
+</ul>
+</li>
+<li><p>NQ6Star      改进膜单元</p>
+</li>
+<li><ul>
+<li>二次完备精化非协调单元</li>
+<li>转角自由度比较完善，非规则四边形单元，无罚约束函数。</li>
+<li>温度应力计算、边框柱和剪力墙的内力协调分配，弧形墙数量较多，QA4结果不合理可以使用NQ6Star。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>4.消能减震设计&amp;隔震设计</p>
+<ul>
+<li><p>消能器：速度相关型、位移相关型，etc</p>
+</li>
+<li><p>《抗规》5.1按照变形特征和高度决定计算方法；</p>
+</li>
+<li><p>yjk 振型分解反应谱法</p>
+</li>
+<li><ul>
+<li><p>斜杆 = 消能器</p>
+</li>
+<li><ul>
+<li>「前处理」「支撑定义」「设置减震单元」（连接属性）</li>
+<li>「节点属性」「消能器」</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>隔震计算</p>
+</li>
+<li><ul>
+<li><p>非线性动力时程分析</p>
+</li>
+<li><ul>
+<li>常规：每一个时程积分时刻的平衡方程求解</li>
+<li>yjk的快速非线性分析方法：没看懂；速度快，结果与辛普森积分接近。</li>
+<li>「节点属性」「单点约束」</li>
+<li>「弹性时程分析」FNA计算</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>（人工对比得出 <strong>beta</strong>）地震力水平向减震系数 beta；隔震后水平地震影响系数最大值 alpha_max1 = beta * alpha_max /phi，填入“地震影响系数最大值”，计算结果偏大。</p>
+<ul>
+<li>时程分析</li>
+</ul>
+<p>「建模」</p>
+<p>「双塔计算」「隔震装置」</p>
+<p>「反应谱计算」</p>
+<p>「FNA时程分析计算」</p>
+<p>计算完成后，「计算参数」「地震放大系数」，导入各层放大系数到反应谱法</p>
+<p>「直接积分法」「反应谱法计算」</p>
+<ul>
+<li>可根据FNA时程分析结果调整隔震支座属性。</li>
+</ul>
+<p>14.节点的弹簧刚度</p>
+<ul>
+<li><p>节点约束 6 = 3+3     个自由度</p>
+</li>
+<li><p>节点设置弹簧刚度 = 一个节点变两个节点，并间之以弹簧刚度。无需人工设置两个点。</p>
+</li>
+<li><p>单点约束，主要用在层之间杆件的弹性约束，方式是修改上层柱的底部6个约束。</p>
+</li>
+<li><p>「局部座标系」 x，y方向任意长线段，测量两点距离，XYZ方向增量填入。</p>
+</li>
+<li><p>竖向刚度不起作用 = 刚度无穷大？</p>
+</li>
+<li><p>弹性连接 、铰连接</p>
+</li>
+<li><ul>
+<li>短柱，短柱与模型分开150mm，「两点连接」「弹性连接」</li>
+<li>没有空隙，短柱刚度不起作用，但是如果某自由度被释放，或有弹簧刚度时，两点的自由度会叠加短柱刚度。</li>
+<li>支座滑动方向剪力 =0；</li>
+</ul>
+</li>
+</ul>
+<p>6.优化设计节省材料的有效措施</p>
+<p>合理的结构设计应是在满足规范要求和足够安全的前提下，最大限度地节约材料和造价，实现建筑真正的绿色和环保。</p>
+<p>当前主要的问題是当前普遍应用的软件中对很多同题的处理存在不全面、粗放的状况，我们首先从几个方面详细梳理了现软件存在的问题，这些问题将直接导致结构钢筋、混凝土等<strong>材料的浪费</strong>和造价的增加。</p>
+</div><div class="article-tags size-small mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/yjk/">yjk</a><a class="link-muted mr-2" rel="tag" href="/tags/%E5%9C%9F%E6%9C%A8/">土木</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=5ed489f21254a4001214b97f&amp;product=inline-share-buttons" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Gefällt Ihnen der Artikel? Unterstützen Sie den Autor mit</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="http://ww1.sinaimg.cn/large/0077Ul0ogy1gfcq4fx4c1j30fy0id0un.jpg" alt="Alipay"></span></a><a class="button donate" href="https://www.buymeacoffee.com/librix123" style="background-color:rgba(255,128,62,.87);border-color:transparent;color:white;" target="_blank" rel="noopener"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button is-danger donate" href="https://www.paypal.me/librix123" target="_blank" rel="noopener"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="http://ww1.sinaimg.cn/large/0077Ul0ogy1gfcq4fvz2rj30ik0j1gnr.jpg" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2019-10/29-%E3%80%90%E4%B9%A6%E5%8D%95%E3%80%91%E5%B2%A9%E5%9C%9F%E5%B7%A5%E7%A8%8B/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">【书单】岩土工程</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2019-05/11-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20manim%20%E5%88%B6%E4%BD%9C%E5%8A%A8%E7%94%BB/"><span class="level-item">如何使用 manim 制作动画</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Kommentare</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread' ,
+            appId: "Ne8wGzOO88BCdAG28jDtMdjC-gzGzoHsz",
+            appKey: "dGdFEnBnFLCVXXFtWU4wKfpH",
+            placeholder: "来啦唠会儿吧",
+            avatar: "mm",
+            
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-Hans",
+            
+            highlight: true,
+            
+            
+            
+            
+            
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="librix123"></figure><p class="title is-size-4 is-block line-height-inherit">librix123</p><p class="is-size-6 is-block">无名之辈</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Perth</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">8</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Kategorien</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">10</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/librix" target="_blank" rel="noopener">Folgen</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/librix"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/librix123"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Weibo" href="https://weibo.com"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Kategorien</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/%E4%B9%A6%E5%8D%95/"><span class="level-start"><span class="level-item">书单</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="level-start"><span class="level-item">学习笔记</span></span><span class="level-end"><span class="level-item tag">5</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/"><span class="level-start"><span class="level-item">算法</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/"><span class="level-start"><span class="level-item">软件指南</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">Letzte Einträge</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-24T16:00:00.000Z">2020-04-25</time></p><p class="title is-6"><a class="link-muted" href="/2020-04/25-%E3%80%90%E5%88%B7%E9%A2%98%E3%80%91%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/">【刷题】算法导论课后习题</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a> / <a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/">算法</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-18T16:00:00.000Z">2020-03-19</time></p><p class="title is-6"><a class="link-muted" href="/2020-03/19-Excel%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">Excel学习笔记-1</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a> / <a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/">软件指南</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-14T16:00:00.000Z">2020-03-15</time></p><p class="title is-6"><a class="link-muted" href="/2020-03/15-Excel%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">Excel学习笔记-1</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a> / <a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/">软件指南</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-10-28T22:20:41.000Z">2019-10-29</time></p><p class="title is-6"><a class="link-muted" href="/2019-10/29-%E3%80%90%E4%B9%A6%E5%8D%95%E3%80%91%E5%B2%A9%E5%9C%9F%E5%B7%A5%E7%A8%8B/">【书单】岩土工程</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E4%B9%A6%E5%8D%95/">书单</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-06-03T16:00:00.000Z">2019-06-04</time></p><p class="title is-6"><a class="link-muted" href="/2019-06/04-yjk%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1/">yjk优化设计</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a> / <a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/">软件指南</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Archive</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/04/"><span class="level-start"><span class="level-item">April 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/03/"><span class="level-start"><span class="level-item">March 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/10/"><span class="level-start"><span class="level-item">October 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/06/"><span class="level-start"><span class="level-item">June 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/05/"><span class="level-start"><span class="level-item">May 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/03/"><span class="level-start"><span class="level-item">March 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/02/"><span class="level-start"><span class="level-item">February 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/CAD/"><span class="tag">CAD</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Excel/"><span class="tag">Excel</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/yjk/"><span class="tag">yjk</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%88%9D%E5%AD%A6%E8%80%85/"><span class="tag">初学者</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9C%9F%E5%8A%9B%E5%AD%A6/"><span class="tag">土力学</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9C%9F%E6%9C%A8/"><span class="tag">土木</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B2%A9%E5%9C%9F%E5%B7%A5%E7%A8%8B/"><span class="tag">岩土工程</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AC%94%E8%AE%B0/"><span class="tag">笔记</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AF%BB%E4%B9%A6/"><span class="tag">读书</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe to Updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">项脊轩</a><p class="size-small"><span>&copy; 2020 Librix123</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-Hans");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://librix.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Zurück nach oben" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Tippen Sie etwas..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Tippen Sie etwas...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Kategorien","tags":"Tags"});
+        });</script></body></html>

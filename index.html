@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>前路迷茫</title><meta description="个人博客，记录思考。"><meta property="og:type" content="blog"><meta property="og:title" content="前路迷茫"><meta property="og:url" content="https://librix.github.io/"><meta property="og:site_name" content="项脊轩"><meta property="og:description" content="个人博客，记录思考。"><meta property="og:image" content="https://librix.github.io/img/og_image.png"><meta property="article:author" content="librix123"><meta property="article:tag" content="土木工程 计算机技术 理工科 知识 管理 信息 个人提升"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><meta property="twitter:creator" content="@librix123"><meta property="twitter:site" content="https://twitter.com/librix123"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://librix.github.io"},"headline":"哈哈哈哈","image":["https://librix.github.io/img/og_image.png"],"author":{"@type":"Person","name":"librix123"},"description":"EEE"}</script><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">项脊轩</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Suche" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-04-24T16:00:00.000Z" title="2020-04-24T16:00:00.000Z">2020-04-25</time><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><span> / </span><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/">算法</a></span><span class="level-item">3 minutes lesen (Über 385 Worte)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020-04/25-%E3%80%90%E5%88%B7%E9%A2%98%E3%80%91%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/">【刷题】算法导论课后习题</a></h1><div class="content"><p>1-1-1 考试成绩；KPI绩效考核。cover the friuts.<br>1-1-2 完成时间的长短。<br>1-1-3 list 方便，占用空间大。<br>1-1-4 可求解；无最优解。<br>1-1-5 x</p>
+<p>1-2-1 如何更快排序。<br>1-2-2 N / 8n^2 &lt; N / 64n lg n  总任务量/效率 = 时间<br>1-2-3 总任务量 / 时间 = 效率</p>
+<p>[思考题]1-1 n = f(n) * t</p>
+<p>2-1-1 12min<br> &lt;31, 41, 59, 26, 41, 58&gt;<br>    j=2, key = A[2]=41<br>    i=1, A[1]=&lt;31&gt;<br>    (i&gt;0 and A[1]&gt;A[2])=False<br>    A[i+1]=A[2]=41</p>
+<pre><code>&lt;31,41&gt;
+
+&lt;31,41,59&gt;
+&lt;31,41,59,26&gt; 
+    i=3,59&gt;21 =&gt; &lt;31,41,26,59&gt;  
+    i=2,41&gt;21 =&gt; &lt;31,26,41,59&gt;
+    i=1,31&gt;21 =&gt; &lt;26,31,41,59&gt;
+    i=0,exit while
+&lt;26,31,41,59,41&gt; i=4,A[4]=59&gt;key=41 =&gt; A[5]=59
+&lt;26,31,41,,59&gt; =&gt; i=3,A[3]=41=key =&gt;
+&lt;26,31,41,41,59&gt;
+
+j=6 A[j]=58=key
+i=5 A[i]=59
+A[i] &gt; key =&gt; A[i+1]=A[i]=59 &lt;26,31,41,41,,59&gt;
+i=4 A[i]=41 &lt;key =&gt; A[i+1]=key &lt;26,31,41,41,58,59&gt;</code></pre><p>2-1-2 非升序排列(降序)<br>for j=2 to A.length<br>    A[j]=key<br>    i=j-1<br>    while key&gt;A[i] and i&gt;0<br>        A[i+1]=A[i]<br>        i=i-1<br>    A[i+1]=key</p>
+<p>2-1-3 线性查找<br>for i = 1 to n<br>    v=NIL<br>    while v!=A[i] and i&lt;n+1<br>        i++</p>
+<p>2-1-4<br>for i = max{A.length, B.length} downto 1<br>    C[i]=A[i]+B[i]<br>    while C[i]&gt;1<br>        C[i]=C[i]-2<br>        C[i-1]+1</p>
+<p>2-1-5</p>
+<p>2-2-1 \Theta(n^3)</p>
+<p>2-2-2<br>for i = 1 to A.length - 1<br>    key = A[i]<br>    for j= 2 to A.length<br>    if A[j]&lt; key then<br>         key = A[j]<br>         temp = A[i]<br>         A[i]= key<br>         A[j]= A[i]</p>
+<p>2-3-1<br>A=&lt;3,41,52,26,38,57,9,49&gt;<br>L=&lt;3,41,52,26&gt; R=&lt;38,57,9,49&gt;<br>L_1=&lt;3,41&gt; R_1=&lt;52,26&gt; L_2=&lt;38,57&gt; R_2=&lt;9,49&gt;<br>L_11=&lt;3&gt; R_11=&lt;41&gt; ……</p>
+<p>Merge(L_11,R_11) =&gt; L_1=&lt;3,41&gt;<br>Merge(L_12,R_12) =&gt; R_1=&lt;26,52&gt;<br>Merge(L_1,R_1) =&gt;  L=&lt;3,26,41,52&gt;<br>                   R=&lt;9,38,49,57&gt;<br>2-3-2<br>Merge<br>// A[1…n]=A[p…q][q+1,r]<br>n_1 = q-p+1<br>n_2 = r-q<br>// L，R<br>for i=1 to n_1<br>    L[i]=A[p+i-1]<br>for j= 1 to n_2<br>    R[j]=A[j+q]</p>
+<p>for k = p to r<br>    if i&lt;n_1+1 and j&lt;n_2+1<br>        if L[i]&lt;R[j]<br>            A[k]=L[i]<br>            i++<br>        else<br>            A[k]=R[j]<br>            j++<br>    elseif i&gt;n_1<br>        A[k]=L[i]<br>        i++<br>    elseif j&gt;n_2<br>        A[k]=R[j]<br>        j++</p>
+<p>2-3-3 数列求通项问题</p>
+<p>2-3-4<br>T(n) = T(n-1)+\theta{n}</p>
+<p>2-3-5<br>f(A,p,r,v)<br>    while p&lt;r:  // 缺失<br>        q = float( (p+r)/2 ) // *<br>        if A[q] = v return q<br>        // if A[q] &gt; v then f(A,p,q,v)<br>        // if A[q] &lt; v then f(A,q,r,v)<br>        if A[q] &gt; v then f(A,p,q+1,v)<br>        if A[q] &lt; v then f(A,q-1,r,v)</p>
+<p>f(A,p,r,v)<br>    while p&lt;r<br>        m = float( (p+r)/2 )<br>        if A[m] == v<br>        if A[m] &gt; v then p = m+1<br>        if A[m] &gt; v else r = m-1</p>
+<p>2-3-7<br>sorted(A) // \Theta{n lg n}<br>v = A[i] - x<br>search(A,low,high,v) // n \Theta(lg n)</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-03-18T16:00:00.000Z" title="2020-03-18T16:00:00.000Z">2020-03-19</time><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><span> / </span><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/">软件指南</a></span><span class="level-item">16 minutes lesen (Über 2392 Worte)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020-03/19-Excel%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">Excel学习笔记-1</a></h1><div class="content"><p>1.数据的处理离不开数据。<br>2.数据的来源是测量＆整理＆格式化。只有格式化的数据才有意义。<br>3.数据的展示和数据的处理以及数据分析是不同的事情。</p>
+<ul>
+<li>数据展示靠漂亮。可视化。</li>
+<li>数据清洗==必须！函数|手动处理。</li>
+<li>数据【计算|分析】靠 API、手册、知识。</li>
+</ul>
+<p>4.Excel 原理：<br>语法（函数逻辑）：function(parameter_No1,parameter_No2,…)<br>引用 F4<br>函数<br>    统计函数*       查询匹配函数*     工程函数<br>    文本函数*       信息函数*       数据库函数<br>    日期时间*       数学三角函数      宏表函数<br>    逻輯函数*       财务函数        自定义函数</p>
+<p>5.强大的计算器<br>1、加减乘除   +-<em>/ SUM Product<br>2、幂 power<br>3、绝对值 abs<br>4、四舍五入 round<br>4、向上取整 INT<br>5、求余数   MOD<br>6、求平方根 SQRT<br>7、求乘积的和 SUMPRODUCT(列1，列2) = 矩阵A</em>B</p>
+<p>8、 求平方和     SUMSQ    := sum(square)<br>9、 求平方差之和 SUMX2MY2 := sum x^2 minus y^2<br>10、求平方和之和 SUMX2PY2 := sum x^2 plus  y^2<br>11、求差的平方和 SUMXMY2  := sum (x minus y)^2</p>
+<p>位置描述: Row() 行号 COLUMN() 列号<br>返回字母：CHAR(ROW(A65)) := A65单元格的行号的char值</p>
+<p>6.引用方式<br>公式输入中，点击任意单元格，都可以点击任意次F4，锁定单元格。<br>=VLOOKUP(“第20课”,$A$1:$C$22,2,0)<br>返回 在区域【$A$1:$C$22】中，包含【”第20课”】的行中第2列的值。</p>
+<p>7.格式统一<br>7.1.小数位处理：ROUND;ROUNDUP;ROUNDDOWN.<br>7.2.货币符号：＆连接符;CTRL-SHIFT-4;RMB;DOLLAR.<br>格式：0.00 元;$ 0.00;<br>7.3.英文大小写：UPPER;LOWER;PROPER<br>7.4.文本数值转化：VALUE;NUMBERVALUE;尽量使用自定义格式添加单位。<br>7.5.数字金额大小写转化：<br>    NUMBERSTRING(数字，样式类型)<br>    NUMBERSTRING(12345,1) 1=一，带百千万 2=壹 3=一，不带百千万<br>    Dbnum(B12,”[DBNUM1]”) 参数：1,2,3<br>    Dbnum(123.45<em>100,”[DBNUM2]G/通用格式元;负[DBNUM2]G/通用格式元;”)<br>    Dbnum(123.45</em>100,”[DBNUM2]0拾0万0仟0佰0拾0元0角0分”)<br>7.6.<br>TEXT(2345,”￥ 0.00”)<br>TEXT(20200429,”0000-00-00”)<br>TEXT(2020-04-29,”MMMM”)</p>
+<p>8.文本：汉字、字母、字符<br>8.1.文本连接：&amp;;CONCATENATE;批量连接PHONETIC。<br>8.2.文本提取：LEFT;RIGHT;MID<br>8.3.查找替换：<br>    返回位置：    FIND(“x”,区域,从第几个开始查找)返回位置。<br>    包含关系：    IF( ISNUMBER(FIND(A1,B1)) ,”包含”, “没包含” )<br>                      判断FIND的结果是不是数字。<br>    提取用户名：  LIFT(A1,FIND(@,A1)-1)<br>    替换：        REPLACE(A1,起始位置,替换几个字符,替换成什么)<br>                  SUBSTITUTE(A1,”xx”,”yy”)<br>8.4.字符字节计算<br>    字符：LEN<br>    字节：LENB<br>8.5.两列文本校对：<br>    EXACT() = 差值。区分大小写。<br>    DELTA() = 1 相同；0 不同。<br>8.6.数据清理：<br>    CLEAN<br>    TRIM<br>9.数据汇总的思维框架<br>    统计三大函数：计数；求和；平均。[状态栏]。<br>        SUM<br>        COUNT; COUNTA 非空单元格; COUNTBLANK 空白单元格。<br>        AVERAGE<br>    描述性统计：<br>        SUM<br>        COUNT      计数<br>        AVERAGE<br>        MAX<br>        MIN<br>        MEDIAN     中位数<br>        MODE       众数<br>        LARGE      从大到小排列第K个<br>        SMALL      从小到大排列第k个<br>        QUARTILE   四分位数<br>        VAR        样本方差<br>        STDEV      样本标准偏差<br>        CONFIDENCE;TTEST;POISSION;RSQ<br>        FREQUENCY  频率分布<br>            数组计算：=FRQUENCY(data,bias) ctrl-shift-enter<br>    数据排名：<br>        RANK(num,ref,0 降序) num 在 ref 中的排名<br>    增长率：<br>        环比增长率：同上个月相比。期末/期初-1。<br>        同比增长率：去年同期相比。期末/期初-1。长时间增长趋势。<br>        复合增长率：CAGR;<br>            投资收益率=（期末/期初）^(1/T)-1<br>            验算： 期初*(1+CAGR)^T</p>
+<p>10.条件统计<br>    单条件统计：<br>        SUMIF()<br>        COUNTIF()<br>        AVERAGEIF()<br>        - 条件：<br>            求现金消费总金额<br>            求&gt;700的消费总额<br>            求消费店=总店的记录数<br>            求银行卡支付的记录数<br>            求现金消费的平均值</p>
+<p>11.时间函数<br>    时间日期格式：<br>        1    1900/1/1<br>        2    1900/1/2<br>        3    1900/1/3<br>        YEAR(1856-10-10) ERROR!<br>        ctrl-;       当前日期<br>        ctrl-shift-; 当前时间<br>        ctrl-shift-2 日期时间格式<br>        0.9229 22:09:00  (22+9min/60)/24<br>        0.5902 14:00:00  时间对应[0,1]之间的小数</p>
+<pre><code>基本时间日期函数：
+    DATE(year,month,day) 2018/1/26
+    YEAR(NUMBER) = 2018
+    MONTH(NUMBER) = 1
+    DAY(NUMBER) = 26
+
+    TIME(hour,minute,second) 20:30:25
+    HOUR(NUMBER) = 20
+    MINUTE(NUMBER) = 30 
+    SECOND(NUMBER) = 25
+
+    NOW()   2018/11/1 22:16
+    TODAY() 2018/11/1
+
+星期
+    WEEKDAY(A1,返回类型)
+    TEXT(weekday(B2,1),&quot;AAAA&quot;) 星期三 
+        1:1~7 日~六
+        AAAA: 日~六
+    WEEKNUM(2018/10/31,1) 44 是1年的第44周。 
+    21:系统2，欧洲，本年中，第一个星期四所在的周=第一周。
+    系统1，包括1月1日的周为第1周。
+间隔时间：2012/6/5  2018/5/20 
+    间隔天数： A2-A1
+    间隔月份：(Year(A2)-Year(A1))*12+(MONTH(A2)-MONTH(A1))
+    间隔年数：Year(A2)-Year(A1)
+    间隔天数：DATEDIF(起始日期,结束日期,&quot;D&quot;)
+    间隔月份：DATEDIF(起始日期,结束日期,&quot;M&quot;)
+    间隔年数: DATEDIF(起始日期,结束日期,&quot;Y&quot;)
+        向下取，6年不满=5年。
+
+    忽略月份求天 DATEDIF(起始日期,结束日期,&quot;MD&quot;)
+    忽略年份求月 DATEDIF(起始日期,结束日期,&quot;YM&quot;)
+    忽略年份求天 DATEDIF(起始日期,结束日期,&quot;YD&quot;)
+
+工作日工作天数计算
+    入职时间：2016/8/22
+    年末时间：2016/12/31
+    工作日：=NETWORKDAYS(C1,C2,不考虑周末)
+    全年工作日：NETWORKDAYS(&quot;2016-1-1&quot;,&quot;2016-12-31&quot;)
+    休假列表：A1:A5
+
+项目规划计算完工日期
+    项目启动日期：2012/9/1
+    项目所需天数：50
+    项目预计完成日期：workday(&quot;2012/9/1&quot;,50)
+
+项目规划计算完工日期
+    A项目开工日期：2016/1/31 计算时长：1月
+    EDATE(&quot;2016/1/31&quot;,1)
+    退休时间计算：
+    男 1984/12/12 出生 出生后60年退休
+    女 1980/10/2  出生 出生后55年退休
+    EDATE(&quot;1984/12/12&quot;,60*12)
+    EDATE(&quot;1984/12/12&quot;,((C14=&quot;男&quot;)*5+55)*12)
+
+计算指定日期之前或之后的数月的最后一天日期。
+2016/1/15 EDATE(&quot;2016/1/15&quot;) EOMONTH(&quot;2016/1/15&quot;)
+2016/1/15   2016/4/15        2016/4/30</code></pre><p>12.数据舍入<br>    =ROUND()<br>    =RUONDUP()<br>    =ROUNDDOWN()</p>
+<pre><code>CELLING 向上舍入
+FLOOR
+
+按1周计算租金，实际居住4天。
+    CELLING(4/7,1)
+    CELLING(4,7)
+打卡计算：FLOOR((&quot;21:30&quot;-&quot;8:30&quot;)*24,0.5)
+    时间 = 小数的天数
+    天数＊24 = 小时 
+    不足  0.5h 舍弃
+计算哪一个季度：向上舍入。</code></pre><p>13.<br>VLOOKUP 纵向方向查找<br>HLOOKUP 水平方向查找</p>
+<p>通配符使用：”*”&amp;A1&amp;”*”</p>
+<ul>
+<li>0,1,2,……<br>? 1<br>?* 1,2,3,…<br><code>?</code>*</li>
+</ul>
+<p>快速填充 ctrl-1</p>
+<p>VLOOKUP(<br>    H1&amp;I1,  搜索1 搜索2<br>    IF((1,0),$B$1:$B$5 &amp; $C$1:$C$5, $D$1:$D$5),<br>                条件1  &amp;  条件2      查找目的<br>    2,          虽然在第3列，但1，2列合并了。<br>    0           精确<br>    )<br>ctrl-shift-enter 数组计算</p>
+<p>SUMPRODUCT(($B$1:$B$5=H1)*($C$1:$C$5=I1),$D$1:$D$5)<br>    ($B$1:$B$5=H1) 区域，从上到下是否匹配 H1，<br>    ($C$1:$C$5=I1) 区域，是否匹配 I1，<br>    乘法，TRUE * TURE = 1<br>    [0,0,1,0,0] * $D$1:$D$5 提取查找得值。</p>
+<p>INDEX() 根据指定位置返回数据<br>MATCH() 根据指定文本返回所在位置。<br>CHOOSE(index, valuelist-with-comma) 根据索引值返回对应位置数据。<br>OFFSET(初始位置，向下移动几行，向右移动几列，[几行几列区域])</p>
+<p>INDEX(B6:B24,MATCH(F6,F6:F24,0))<br>INDEX(B6:F24,MATCH(F6,F6:F24,0),1)<br>CHOOSE(1,”A”,”B”,”C”,”D”)<br>OFFSET(B1,2,3,2,2)  内存数组 F9查看<br>OFFSET(B1:G10,7,0) </p>
+<p>.课程目录<br>第0课     先导课表格≠Excel，Excel用得好那是神器，用不好就只是个表格<br>第1课     语法：简单易懂不会忘，1个逻辑套用10个公式<br>第2课     引用：复制公式不出错，避免努力白费返工重做<br>第3课     格式转化：数据格式不一统一？“唰”一下瞬间自动规范<br>第4课     文本处理：掌握这些函数，10秒钟完成文本处理<br>第5课     数据汇总：简单几招，再复杂的数据也立刻一目了然<br>第6课     条件统计：掌握条件统计，让你透过数据直达本质<br>第7课     时间函数：不翻日历，几个函数帮你搞定日期计算<br>第8课     数据舍入：函数中的四舍五入问题，帮你快速判断何时取大值或小值<br>第9课     数据匹配（1)：函数中的战斗机【VLOOKUP】，1节课教会你全部套路<br>第10课    数据匹配（2）：比VLOOKUP更牛更简单，这几个查询函数同样好用到爆<br>——-未完成：—–<br>第11课    逻辑函数：思维混乱的人，不知道的结构化思考的N个秘密<br>第12课    数组计算：简化操作省时间，一步完成10组运算！<br>第13课    数组计算（2）：简化操作省时间，一步完成10步运算<br>第14课    一个函数闯天下：Sumproduct函数强大到你想象不到<br>第15课    汇总之王：Subtotal函数汇总隐藏报表，一专多能，游刃有余<br>第16课    数据库函数：构造条件区域，灵活处理报表统计<br>第17课    Indirect函数：利用间接引用实现跨表计算及二级菜单制作<br>第18课    微图表模拟：利用间接引用实现跨表计算及二级菜单制作<br>第19课    宏表函数：名称管理器里的函数，你知道有多便利吗？<br>第20课    案例应用1：写一封一对多的工作邮件，选主送抄送要1个小时？<br>第21课    案例应用2：公众号历史文章提取及阅读量趋势统计<br>其他：<br>1、数据透视表<br>2、快捷键    </p>
+<p>2.1 格式化的数据是什么？<br>数字<br>文本<br>日期<br>TEXT(A1,”0000-00-00”)</p>
+<p>#Q:提取【第0课】【第10课】中间数字？<br>#A:<br>    1.转换为数字 NUMBERVALUE<br>    2.从右侧查找 RIGHT(A1,LEN(A1)-FIND(“第”,A1))<br>    &gt; 序号=总长度-查找值：LEN(A1)-FIND(“第”,A1) =&gt; ?<br>    3.从左侧查找 LEFT(<em>,FIND(“课”,</em>,1)-1)<br>    &gt; 处理右侧查找出来的值 *<br>    &gt; 序号 = 查找出来的位置 - 1：FIND(“课”,*,1)-1 =&gt; 前一位</p>
+<pre><code>=NUMBERVALUE(LEFT(RIGHT(A1,LEN(A1)-FIND(&quot;第&quot;,A1)),FIND(&quot;课&quot;,RIGHT(A1,LEN(A1)-FIND(&quot;第&quot;,A1)),1)-1))</code></pre><p>7.3注：数据表头：姓名|待处理数据|英文大写|英文小写|首字母大写</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-03-14T16:00:00.000Z" title="2020-03-14T16:00:00.000Z">2020-03-15</time><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><span> / </span><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/">软件指南</a></span><span class="level-item">26 minutes lesen (Über 3920 Worte)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020-03/15-Excel%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">Excel学习笔记-1</a></h1><div class="content"><p>1.Excel 知识体系<br>    数据录入<br>    规范规则<br>    函数运算<br>    图标制作<br>    数据分析<br>    图标导出</p>
+<p>2.使用OCR录入数据<br>    配合软件：ABBYY</p>
+<p>3.从网页导入数据<br>    【数据】-【获取外部数据】-【自网站】</p>
+<p>4.简道云，可以将调查表数据导出为CSV文件。</p>
+<p>5.数据规范。<br>    空格 -&gt; Ctrl-F 替换【空格】为【空】</p>
+<pre><code>合并单元格 -&gt; 禁止</code></pre><p>6.时间和日期格式<br>6.a.正确格式查看：<br>    【设置单元格格式】-【数字】&gt;【分类】&gt; 日期 &gt; 类型<br>6.a.1.正确格式（录入日期的正确输入方式）<br>    2001/1/1<br>    2001-1-1<br>    2001年1月1日</p>
+<p>6.b.<br>2010/1/1<br>    强行把格式变成『文本』，之后输入的日期，系统则会把它当作『文本』。之后即便把它转化为『常规』，但是并没有变成『数字』。<br>    转换：<br>        复制<br>        选择性粘贴-&gt;运算-&gt;加<br>2010.1.1<br>    系统不认点分割<br>20100101<br>    系统不认无分割<br>6.c.时间格式<br>1900/1/1 0:00:00<br> 时间   常规<br> 0:00    0.00 = X/24<br>12:00    0.50 = X/24<br>24:00    1.00</p>
+<p>6.c.1.<br>    12 PM 「注：12:00 SP PM，有空格」<br>    12:00<br>    12时00分00秒</p>
+<p>7.数字和文本格式的差异<br>文本：左对齐；相对稳定。<br>阿拉伯数字：右对齐；多变。<br>超过11+位数字，以科学记数法标识。<br>「技巧」转变为文本录入长数字。<br>文本和数字都是格式，而不是本质。<br>只有数字格式可以计算出结果。文本格式不可以运算。</p>
+<p>8.表格通用格式<br>前端注重格式的有效性、合理性。<br>后端注重易读性、美观性。</p>
+<p>8.a.数据透视表<br>[避免修改元数据]<br>（选中数据区域）-【插入】-【表格】-【数据透视表】<br>（点选 列名）-【值】-（点选）-【值字段设置】-（选择 平均值）</p>
+<p>8.b.数据录入常见错误<br>8.b.1.合并单元格<br>    如何取消合并单元格？<br>    a.（选中数据区域）-【开始】-【对齐方式】-【合并后居中】<br>    b.【（Ctrl-G）定位窗口】-【定位条件…】-【空值】<br>    c.（输入 “=”）-（选择上一个单元格）-（按 Ctrl-Enter）</p>
+<pre><code>引用公式改为稳定数据
+a.（选中数据区域）-【复制】-【粘贴为值】</code></pre><p>8.b.2.没有序号</p>
+<p>8.b.3.乱加表头：斜线、矩形，会影响表的结构。</p>
+<p>8.b.4.乱用合计<br>任何统计内容不应当放入录入数据的地方。</p>
+<p>8.b.5.不符合数据透视表规范<br>错误：<br>    序号    员工ID    姓名    部门    职位    性别    年龄    籍贯    婚否    生日    文化程度    第一季度评分    第二季度评分    第三季度评分<br>    1    ACK01    程天赐    销售部    电话销售    男    32    广州    未婚    3月21日    大专    8    5    9<br>    2    ACK02    黄涌康    销售部    电话销售    男    30    深圳    已婚    4月24日    大专    3    7    7<br>正确：<br>    序号    员工ID    姓名        部门    职位    性别    年龄    籍贯    婚否    生日    文化程度    季度    评分<br>    1    ACK01    程天赐    销售部    电话销售    男    32    广州    未婚    3月21日    大专    第一季度    8<br>    1    ACK01    程天赐    销售部    电话销售    男    32    广州    未婚    3月21日    大专    第二季度    5<br>    1    ACK01    程天赐    销售部    电话销售    男    32    广州    未婚    3月21日    大专    第三季度    9<br>    2    ACK02    黄涌康    销售部    电话销售    男    30    深圳    已婚    4月24日    大专    第一季度    3<br>    2    ACK02    黄涌康    销售部    电话销售    男    30    深圳    已婚    4月24日    大专    第二季度    7<br>    2    ACK02    黄涌康    销售部    电话销售    男    30    深圳    已婚    4月24日    大专    第三季度    7</p>
+<p>8.b.6.该填零的时候不要空着。</p>
+<p>8.b.7.不要有空行。<br>    去除空行方法：<br>        【（Ctrl-G）定位窗口】-【定位条件…】-【空值】<br>        【删除】-【整行】</p>
+<p>8.b.8.长数字没有文本格式化</p>
+<p>8.b.9.单元格非原子化<br>    （选中数据区域）-【数据】-【分列】</p>
+<p>8.b.10.内容不统一<br>    相同的内容用相同的字符串表达。<br>    未填写时：<br>    a.（在旁边空白处填写需要录入的规范数据） A，B，C，……<br>    b.（选中需要填入规范限定数据的列）<br>    c.【数据】-【数据工具】-【数据验证】-&gt;【设置】-【验证条件】-【允许】-（选择 “序列”）<br>    d.（点选 来源旁边的向上箭头）-（鼠标选中 a.录入的规范数据）<br>    填写完毕：<br>    a.查找-替换 替换成统一的名称。</p>
+<p>8.c.总结<br>    有完整的字段标题<br>    首字段应该为序号<br>    数据和日期要用正确的格式<br>    使用数据的有效性<br>    制表要符合数据透视表的规范<br>    没有空行、空列，空格、统计项</p>
+<p>9.快速录入方法<br>9.a.相似格式<br>    比如qq邮箱：<br>    a.【格式】-【自定义】<br>    b.（录入 @”@qq.com”）<br>    c.（输入 234，回车后，自动显示 <a href="mailto:234@qq.com">234@qq.com</a>）</p>
+<p>9.b.单元格中完整显示长串数字<br>9.c.分段显示手机号码<br>    【自定义格式】-（输入 “000-0000-0000”）<br>9.d.阻止EXCEL自动生成超链接<br>    a.【Excel设置】-【自动校对】-【自动更正选项】-【键入时自动套用格式】<br>    b.（取消 键入时替换）</p>
+<p>9.e.下拉菜单输入</p>
+<p>9.f.横纵列变换<br>    复制<br>    粘贴-选择性粘贴-【转置】</p>
+<p>9.g.空白单元格批量填充</p>
+<p>9.h. alt+下箭头 = 显示前面录入过的内容</p>
+<p>9.i. 快速定位公式<br>    （Ctrl-G）【定位条件】-【公式】<br>    【开始】-【查找和选择】-【公式】</p>
+<p>9.j.输入开头为零的文本数据<br>    前面加一个 ‘ 号，如 ‘007<br>    改成文本格式</p>
+<p>9.k.多个零录入<br>    52**6 := 52000000</p>
+<p>9.l.复制填充<br>    Ctrl-D：向下填充<br>    Ctrl-R：向右填充</p>
+<p>9.m.移动<br>    Tab 移动 = 回车 + 右 + 上</p>
+<p>9.n.同组工作表数据录入<br>    所有的单元格都输入了相同的内容：<br>    （按住 ctrl 不放）选中单元格<br>    （松开 ctrl）录入数据，数据出现在最后一个单元格<br>    （按一个 ctrl） （按一下回车）</p>
+<pre><code>不同的 sheet 中的相同位置输入相同的内容：
+（按住 ctrl 不放）选中 sheets
+直接录入内容</code></pre><p>9.o.快速删除空行<br>    【（F5）定位】-【定位条件】-（空值）</p>
+<p>9.p.提取差异单元格，标注颜色<br>    （选中数据区域）-条件格式-突出-重复值</p>
+<p>9.q.快速提取身份证号码<br>    =MID(A2,7,8) 提取A2，从第7开始，连续取8个。<br>    =TEXT(A3,”0000-00-00”)，修改A3的格式为日期格式。</p>
+<p>10.Ctrl-L 套用表格格式<br>10.a.选择数据区域 ctrl-shift-下箭头/右箭头<br>10.b.在【开始】-【套用表格格式】</p>
+<p>方便看一行的数据不串行。<br>套用表格之后，系统将表格看作是一个区域，而不是单独的单元格，很多操作都是批量的。添加行，公式也不需要更改即可正确计算。<br>数字 筛选 &gt;n &lt;m a&lt;x&lt;b</p>
+<p>10.c.取消套用样式<br>    表格工具-设计-【工具】-【转换为区域】</p>
+<p>10.d.总结<br>    便于阅读<br>    可以帮助我们更快速地录入信息<br>    能帮助完善字段标题<br>    方便对数据进行筛选、计算和删除重复项</p>
+<p>11.<br>    删除空格<br>    填充序列<br>    选中列 ctrl-shift-下箭头<br>    分列-固定宽度<br>    没有对齐的文本，对齐<br>    价格： 0”元” 显示5元，实际是数字。</p>
+<pre><code>（选中某行中的任意一个单元格，冻结该行：）
+【视图】-【冻结窗口】-【冻结首行】</code></pre><p>12.函数数量：<br>    序号    函数类型    函数数量（个）<br>    1    兼容性函数    38<br>    2    多维数据集函数    7<br>    3    数据库函数    12<br>    4    日期和时间函数    22<br>    5    工程函数    41<br>    6    财务函数    53<br>    7    信息函数    17<br>    8    逻辑函数    7<br>    9    查找和引用函数    20<br>    10    数学和三角函数    63<br>    11    统计函数    98<br>    12    文本函数    27<br>    合计        405</p>
+<p>12.a.<br>求和：<br>    =<br>    =SUM(<br>    鼠标选择列<br>    =SUM(C1:C8)</p>
+<p>12.b.【公式】-【定义的名称】<br>单元格改名：<br>    在左上角输入，回车。</p>
+<p>单元格区域也可以改名。</p>
+<p>根据最左列创建。</p>
+<p>使用：F3 调出名称栏。</p>
+<p>・Excel名称不能使用RC<br>・空格会被下划线自动填充<br>・与单元格相同的名称避免使用<br>・符号只能使用.或者下划线</p>
+<p>删除名称：名称管理器</p>
+<p>12.c.<br>相对引用（默认）:D1<br>绝对引用：$D$1，按F4进行锁定。</p>
+<p>D$36 * $C37 =&gt;锁定 $36 行 $C 列。九九乘法表。</p>
+<p>12.d.VLOOKUP函数使用条件:<br>□有两张表格<br>□两张表要有共通的字段<br>□表一缺失的字段能在表二里面找得到</p>
+<p>VLOOKUP (lookup_value, table_array, col_index_num, [range_lookup])<br>    你要查找的{键}<br>    你要查找的{键值对}在哪个区域的{区域名称}<br>    查找的{键对应的<em>值</em>}在区域当中的第几列<br>    模糊查找=1 OR 精确查找=0</p>
+<p>12.e.IF 函数 - 逻辑判断<br>（点击 fx 图标）可以看参数。</p>
+<p>要显示文本X，用引号括起。</p>
+<p>基本运算符号： = &lt; &gt; &lt;= &gt;= &gt;&lt;（不等于）</p>
+<p>12.f. INDEX与MATCH函数的语法<br>任意方向查询 | 多条件查询</p>
+<p>函数定义：<br>INDEX(array/row_num/[colun,in_num]),指<br>    返回{ 数据区域X } 中某{ {位置}={行号}{列号} } 的 {数值}。</p>
+<p>MATCH(lookup_valueJookup_arrayz[match_type]),<br>    返回 {指定键名} 在 {指定区域} 中 {按什么方式查找} 的 {位置}。<br>    查找方式：精确=0，大于=-1，小于=1.</p>
+<p>使用：<br>用户     属性1    属性2    属性3    属性4    属性5<br>用户A    +———————————–+<br>用户B    |               数据区域X            |<br>用户C    +———————————–+<br>——————————————————————<br>属性1 位置：MATCH(属性1, 属性名称区域，0)<br>用户A 位置：MATCH(用户A, 用户名称区域，0)<br>用户A 的 属性1 的值：INDEX(数据区域X，用户A 位置，属性1 位置)</p>
+<p>模糊查找： “*” &amp; B17 &amp; “*”</p>
+<p>12.g.<br>条件求和：SUMIF(匹配区域，匹配字符串，求和区域)<br>    满足匹配条件的匹配区域，对应的 求和区域，进行求和。</p>
+<p>多条件求和：SUMIFS(求和区域，条件1，条件2，……)<br>    条件1 = 匹配区域，匹配字符串</p>
+<p>条件计数：COUNTIF（区域，匹配字符串）<br>多条件计数：COUNTIFS（匹配区域1，匹配字符串1，匹配区域2，匹配字符串2，……） 条件关系：且。</p>
+<p>条件查找：<br>    VLOOKUP(匹配字符串，查找区域，返回值所在列，精确查找=0)</p>
+<p>多条件查找：=L00KUP（1,0/((条件区域 1 = 条件 1)* (条件区域2=条件2)),查询区域）</p>
+<p> VLOOKUP(E2&amp;F2, IF([1,0], A2:A7&amp;B2:B7, C2:C7) , 2, 0)<br>     E2&amp;F2 - 两个单元格连在一起，作为整体<br>     [1,0] - A2:A7&amp;B2:B7，作为整体与 C2:C7 调换<br>     2 - 返回值所在列</p>
+<p> 文本算式<br> A1:= 2*5 A2:=空<br> 点击单元格 A2，【公式】-【定义的名称】-【定义名称】<br> （对话框 新建名称）-（修改名称为 jisuan） - 【引用位置】-（输入 =evaluate(A1) ）<br>（在A2中输入 =jisuan）</p>
+<p>合并多个单元格内容：<br>    =A2 &amp; B2 &amp; “ “ &amp; C2</p>
+<pre><code>先写入合并后的数据，在下方单元格 Ctrl-E （Excel 2019版本）</code></pre><p>变更样式：<br>    =A2 &amp; TEXT(B2, “ y年m月d日”)</p>
+<p>替换部分电话号码<br>    =replace(B2,5,4,”<em>***”)<br>    从 第5位开始，连续4位，替换为</em></p>
+<p>屏蔽返回错误值：<br>    =IFERROR(A2/B2,0) （Excel 2007版本）</p>
+<p>四舍五入：<br>    ROUND(A2,2)</p>
+<p>取整的间隔分钟：<br>    =TEXT(B2-B1, “[m]分钟”)</p>
+<p>日期函数：<br>    =TODAY() 当前的日期<br>    =+NOW()  当前的日期和时间</p>
+<pre><code>=+YEAR(A1)
+=+MONTH(A1)
+=+DAY(A1)</code></pre><p>index &amp; match 函数</p>
+<p>某个日期是星期几？<br>    =WeekDay(B2,2)<br>    =TEXT(WEEKDAY(B2,2),”aaaa”)</p>
+<p>根据出生年月计算年龄<br>    =DATAIF(A2,Today(),”y”)</p>
+<p>从身份证号码中提取性别<br>    =MID(A2,17,1) 从17位开始取1位。<br>    =MOD(A3,2)<br>    =IF(A3=1,”男”, “女”)</p>
+<p>13.微图表</p>
+<p>条形图：（复制数据）-【条件格式】-【数据条】<br>    【条件格式规则管理器】-编辑格式规则-仅显示数据条</p>
+<p>图标集：<br>    饼图等</p>
+<p>SParklines 插件<br>    饼图：【创意】-【饼图】<br>    条形图：【对比】-【方差图】<br>        Var=<br>        Min=0 （Or -1）<br>        Max=1<br>    柱形图：【对比】-【柱形图】</p>
+<pre><code>录入函数名可建立图表。</code></pre><p>突出数据的方法<br>    圈出无效数字<br>        【数据验证】-（&gt;200）<br>        【数据验证】-【圈示无效数字】</p>
+<pre><code>条件格式-新建格式规则
+    =B2=MIN(区域)
+
+重复值
+    条件格式 - 突出  - 重复值
+    快速删除：
+    【数据】-【数据工具】-【删除重复值】</code></pre><p>14.数据透视表<br>    【插入】-【数据透视表】</p>
+<pre><code>（拖动 字段 至 区域间）
+// 折叠重复项
+
+罗列什么、汇总什么
+把需要罗列的部分放入行区域当中，需要计算的字段放入值区域当中。
+
+他们是怎样的关系，要按照怎样的顺序来排列
+如果是上下级关系的，那么我们就全部放在行区域内，如果是交叉区域的，就放在列区域内，在同一个区域就要按照顺序来进行摆放
+
+以什么方式来逬行汇总？是合计数、求平均、还是计数值？
+
+是否需要分页进行筛选？
+使用筛选器。</code></pre><p>14.a.筛选器<br>    拖动 字段 至 筛选器</p>
+<p>14.b.注意，创建时只能选一个或全选。</p>
+<p>14.c.<br>    【插入】-【图表】-【数据透视图】</p>
+<p>14.d.样式<br>    【数据透视表】-【设计】<br>        分类汇总<br>        总计<br>        报表布局<br>            以表格形式显示<br>            重复所有标签<br>        空行<br>            删除每个项目后面的空行</p>
+<pre><code>    镶边列：对求和列填充颜色
+【数据透视表】-【分析】
+    加减
+    （删除求和项文字）后面加空格</code></pre><p>14.e.<br>    默认按月统计。<br>    （右键）组合-（选择 按月统计）。</p>
+<pre><code>（右键）值汇总依据-其他选项-（非重复计数）
+    // 勾选“将此数据添加到数据模型”
+
+切片器
+a. 拖动 字段 至 行列值
+b. 【数据透视表】【分析】-【工具】-【数据透视表】
+c.【插入图表】-柱形图
+d.【数据透视表】【分析】-【筛选】-【切片器】
+
+e.美化
+    （选中切片器）【切片器工具】【选项】-【切片器样式】
+    （在 切片器 右键）【切片器属性】-页眉取消勾选
+    （在 切片器 右键）【大小和属性】
+
+数据透视表
+（在 数据透视表 右键）数据透视表选项-修改透视表名字
+（插入 切片器）
+（在 切片器 右键）报表链接</code></pre><p>15.图表制作<br>    【第一步】-数据<br>    【第二步】-插入图表<br>15.a.坐标轴元素<br>    【添加图表元素】 - 11 个</p>
+<p>15.b.复制图形，在柱形图上粘贴，可取而代之。</p>
+<p>15.c.针管图<br>    边框线条：白色，6.5磅。</p>
+<p>15.d.剪影图<br>    【填充】【层叠并缩放】 75%</p>
+<p>15.d.圆环图</p>
+<p>16.超级链接可以将图形 连接到 其他sheets</p>
+<p>17.打印<br>Ctrl-P 预览打印<br>    【设置】缩放<br>        将工作表调整为一页。<br>        打印选择区域。</p>
+<p>网格线<br>    【页面布局】-工作表选项-网格线-（勾选打印）</p>
+<p>每页打印标题<br>    【页面布局】-【页面设置】-【打印标题】<br>        打印区域<br>        打印标题-顶端标题行行</p>
+<p>页眉页脚<br>    【页面布局】-【页面设置】（更多）<br>    （页面设置 对话框）-页眉页脚</p>
+<p>不打印错误值<br>    【页面布局】-【页面设置】（更多）<br>    （页面设置 对话框）-工作表<br>        错误单元格打印为空白</p>
+<p>单色打印<br>    【页面布局】-【页面设置】（更多）<br>    （页面设置 对话框）-工作表<br>        打印-单色打印</p>
+<p>多个工作表打印<br>    Ctrl-P 设置-打印整个工作簿</p>
+<p>18.与其他软件关联<br>选择性粘贴-粘贴链接-Excel工作表对象</p>
+<p>19.合并多个单元格<br>alt-D-P 数据透视表向导<br>    多重合并计算数据区域<br>    依次选择 sheets 里面的数据<br>    数据透视表显示位置：新工作表</p>
+<p>【数据】【数据工具】-【合并计算】<br>    函数：求和<br>    引用位置 选择 sheet 区域<br>    添加到所有引用位置。<br>    选择第2个 sheet 区域。<br>    标签位置：勾选首行、最左列。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2019-10-28T22:20:41.000Z" title="2019-10-28T22:20:41.000Z">2019-10-29</time><span class="level-item"><a class="link-muted" href="/categories/%E4%B9%A6%E5%8D%95/">书单</a></span><span class="level-item">2 minutes lesen (Über 320 Worte)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019-10/29-%E3%80%90%E4%B9%A6%E5%8D%95%E3%80%91%E5%B2%A9%E5%9C%9F%E5%B7%A5%E7%A8%8B/">【书单】岩土工程</a></h1><div class="content"><table>
+<thead>
+<tr>
+<th>岩土工程新技术实用全书 8侧 王山</th>
+<th>地质基础知识</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>《注册岩土工程师专业考试案例分析历年考题及模拟题详解》（原著刘兴禄）  《注册岩土工程师执业资格考试专业考试复习教程》（李广信、高大钊）</td>
+<td></td>
+</tr>
+<tr>
+<td>各个行业的规范</td>
+<td>第二章</td>
+</tr>
+<tr>
+<td>林宗元 五大手册</td>
+<td></td>
+</tr>
+<tr>
+<td>普通水文地质学  林宗元 实验手册</td>
+<td></td>
+</tr>
+<tr>
+<td>岩土工程设计的安全度</td>
+<td></td>
+</tr>
+<tr>
+<td>赵明华 土力学</td>
+<td></td>
+</tr>
+<tr>
+<td>建筑地基基础设计规范理解与应用，</td>
+<td>浅基础</td>
+</tr>
+<tr>
+<td>建筑桩基规范应用手册    桩基工程手册</td>
+<td>深基础</td>
+</tr>
+<tr>
+<td>地基处理手册  复合地基桩处理技术  既有建筑地基加固工程实例</td>
+<td>地基处理</td>
+</tr>
+<tr>
+<td>铁路路基设计规范  公路路基设计规范</td>
+<td></td>
+</tr>
+<tr>
+<td>挡土墙土压力计算  作者:顾慰慈编著  页数:441 出版社:北京：中国建筑材料工业出版社 出版日期:2001</td>
+<td>故为次</td>
+</tr>
+<tr>
+<td>边坡、土压力 基坑工程手册</td>
+<td>基坑工程</td>
+</tr>
+<tr>
+<td>工程地质手册 张苏民  铁路工程地质手册  岩土工程地质手册</td>
+<td>特殊性的岩土  特殊性的地质条件  特殊性的工程</td>
+</tr>
+</tbody></table>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2019-06-03T16:00:00.000Z" title="2019-06-03T16:00:00.000Z">2019-06-04</time><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><span> / </span><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/">软件指南</a></span><span class="level-item">12 minutes lesen (Über 1777 Worte)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019-06/04-yjk%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1/">yjk优化设计</a></h1><div class="content"><p>提高结构性能避免安全隐患的计算改进</p>
+<p>1.包络设计：</p>
+<ul>
+<li><p>多塔：合塔计算和分塔计算（《高规》5.1.14）</p>
+</li>
+<li><ul>
+<li>「包络设计」「结果较大值」</li>
+<li>『计算简图』『自动分塔示意』可自定义分塔</li>
+<li>「显示多塔取大构件」合塔控制的构件</li>
+</ul>
+</li>
+<li><p>楼梯：考虑楼梯构件影响&amp;不计楼梯构件影响（地震时，楼梯是一栋楼里面最安全的地方）</p>
+</li>
+<li><ul>
+<li>「包络设计」「与其他模型进行包络设计」</li>
+<li>正截面，斜截面</li>
+</ul>
+</li>
+<li><p>少墙框架的自动包络计算</p>
+</li>
+<li><ul>
+<li>软件按框架计算时，对剪力墙的<strong>弯曲刚度</strong>折减系数。</li>
+<li>软件<strong>不能</strong>对剪力墙的轴向刚度可抗剪刚度进行折减。（机构）</li>
+<li>「设计结果」「少墙框架」</li>
+</ul>
+</li>
+<li><p>多遇地震计算、大震（中震）弹性、大震（中震）不屈服设计</p>
+</li>
+<li><ul>
+<li>中震不屈服设计：前处理「楼层属性」「包络设计构件」</li>
+<li>计算「只包络设计」 「显示取大」</li>
+</ul>
+</li>
+<li><p>刚性连接上连接体</p>
+</li>
+</ul>
+<ol>
+<li>多模型</li>
+</ol>
+<ul>
+<li><p>剪力墙连梁刚度的折减，仅适用于地震效应工况；其余工况不宜折减。</p>
+</li>
+<li><ul>
+<li>连梁刚度不折减组成总刚，非地震工况计算。</li>
+<li>连梁刚度折减组成总刚，地震抗震计算。</li>
+</ul>
+</li>
+<li><p>整体指标（强制刚性板假定），内力、位移、配筋（非刚性板假定）</p>
+</li>
+<li><p>强制刚性</p>
+</li>
+<li><ul>
+<li>坡屋面、错层结构、开大洞口楼层、越层柱、越层支撑，按刚性楼板假定计算<strong>周期比、位移比</strong>。</li>
+<li>刚性平面：只有整体平面位移，层间杆件只有整体的平动、转动。</li>
+</ul>
+</li>
+<li><p>层间突变形成的薄弱层 &amp;&amp; 层间受剪承载力突变形成薄弱层</p>
+</li>
+<li><ul>
+<li><strong>层间受剪承载力突变形成薄弱层</strong> 构件<strong>截面配筋</strong>查看。</li>
+</ul>
+</li>
+<li><p>抗震墙连梁刚度折减</p>
+</li>
+<li><ul>
+<li>地震内力：连梁刚度折减</li>
+<li>位移：连梁刚度可不折减，意思是出现<strong>位移较大时</strong>。</li>
+</ul>
+</li>
+<li><p><strong>最不利地震方向</strong>地震作用</p>
+</li>
+</ul>
+<p>3.有限元力学模型概念</p>
+<ul>
+<li>MPC 多点约束：避免使用惩罚函数造成的矩阵病态等问题。</li>
+<li>子空间迭代法</li>
+<li>Ritz向量法：荷载空间分布，忽略不参与响应振型。【大型结构动态响应】</li>
+<li>Lanczos法</li>
+</ul>
+<p>结构失稳 = 屈曲（屈曲荷载、破坏形态） = 广义特征值</p>
+<p>二阶效应系数 = 屈曲因子的倒数</p>
+<p>比例阻尼、振型阻尼、古典阻尼矩阵、分离模态、基于应变能的阻尼比计算（抗规10.2）</p>
+<ul>
+<li><p>重力二阶效应</p>
+</li>
+<li><ul>
+<li><p>几何刚度矩阵</p>
+</li>
+<li><ul>
+<li>壳元的几何刚度矩阵（剪力墙）</li>
+<li>杆元的几何刚度矩阵</li>
+<li>空间梁元的几何刚度矩阵（一维构件：弯矩、偏心）</li>
+</ul>
+</li>
+<li><p>竖向工况应力状态计算</p>
+</li>
+<li><ul>
+<li>yjk：竖向恒载、活载计算和组合结果</li>
+<li>竖向构件顶点质量</li>
+<li>用户指定应力状态</li>
+</ul>
+</li>
+<li><p>重力二阶效应计算过程</p>
+</li>
+</ul>
+</li>
+<li><p>弹性连接「前处理」「节点属性」「单点约束」</p>
+</li>
+<li><ul>
+<li><p>滑动连接</p>
+</li>
+<li><p>滑动支座 （X平动刚度为零）</p>
+</li>
+<li><p>减震隔震装置</p>
+</li>
+<li><p>其他概念</p>
+</li>
+<li><ul>
+<li>屈曲约束支撑</li>
+<li>阻尼器 </li>
+<li>塑性单元（wen）</li>
+<li>隔震支座</li>
+<li>间隙：有效刚度、有效阻尼、刚度、间隙</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>膜单元</p>
+</li>
+<li><ul>
+<li><p>QA4 经典膜单元</p>
+</li>
+<li><ul>
+<li>带旋转自由度的精华非协调平面四边形等参</li>
+<li>QA4，Allman       陈万吉、龙驭球</li>
+</ul>
+</li>
+<li><p>NQ6Star      改进膜单元</p>
+</li>
+<li><ul>
+<li>二次完备精化非协调单元</li>
+<li>转角自由度比较完善，非规则四边形单元，无罚约束函数。</li>
+<li>温度应力计算、边框柱和剪力墙的内力协调分配，弧形墙数量较多，QA4结果不合理可以使用NQ6Star。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>4.消能减震设计&amp;隔震设计</p>
+<ul>
+<li><p>消能器：速度相关型、位移相关型，etc</p>
+</li>
+<li><p>《抗规》5.1按照变形特征和高度决定计算方法；</p>
+</li>
+<li><p>yjk 振型分解反应谱法</p>
+</li>
+<li><ul>
+<li><p>斜杆 = 消能器</p>
+</li>
+<li><ul>
+<li>「前处理」「支撑定义」「设置减震单元」（连接属性）</li>
+<li>「节点属性」「消能器」</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>隔震计算</p>
+</li>
+<li><ul>
+<li><p>非线性动力时程分析</p>
+</li>
+<li><ul>
+<li>常规：每一个时程积分时刻的平衡方程求解</li>
+<li>yjk的快速非线性分析方法：没看懂；速度快，结果与辛普森积分接近。</li>
+<li>「节点属性」「单点约束」</li>
+<li>「弹性时程分析」FNA计算</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>（人工对比得出 <strong>beta</strong>）地震力水平向减震系数 beta；隔震后水平地震影响系数最大值 alpha_max1 = beta * alpha_max /phi，填入“地震影响系数最大值”，计算结果偏大。</p>
+<ul>
+<li>时程分析</li>
+</ul>
+<p>「建模」</p>
+<p>「双塔计算」「隔震装置」</p>
+<p>「反应谱计算」</p>
+<p>「FNA时程分析计算」</p>
+<p>计算完成后，「计算参数」「地震放大系数」，导入各层放大系数到反应谱法</p>
+<p>「直接积分法」「反应谱法计算」</p>
+<ul>
+<li>可根据FNA时程分析结果调整隔震支座属性。</li>
+</ul>
+<p>14.节点的弹簧刚度</p>
+<ul>
+<li><p>节点约束 6 = 3+3     个自由度</p>
+</li>
+<li><p>节点设置弹簧刚度 = 一个节点变两个节点，并间之以弹簧刚度。无需人工设置两个点。</p>
+</li>
+<li><p>单点约束，主要用在层之间杆件的弹性约束，方式是修改上层柱的底部6个约束。</p>
+</li>
+<li><p>「局部座标系」 x，y方向任意长线段，测量两点距离，XYZ方向增量填入。</p>
+</li>
+<li><p>竖向刚度不起作用 = 刚度无穷大？</p>
+</li>
+<li><p>弹性连接 、铰连接</p>
+</li>
+<li><ul>
+<li>短柱，短柱与模型分开150mm，「两点连接」「弹性连接」</li>
+<li>没有空隙，短柱刚度不起作用，但是如果某自由度被释放，或有弹簧刚度时，两点的自由度会叠加短柱刚度。</li>
+<li>支座滑动方向剪力 =0；</li>
+</ul>
+</li>
+</ul>
+<p>6.优化设计节省材料的有效措施</p>
+<p>合理的结构设计应是在满足规范要求和足够安全的前提下，最大限度地节约材料和造价，实现建筑真正的绿色和环保。</p>
+<p>当前主要的问題是当前普遍应用的软件中对很多同题的处理存在不全面、粗放的状况，我们首先从几个方面详细梳理了现软件存在的问题，这些问题将直接导致结构钢筋、混凝土等<strong>材料的浪费</strong>和造价的增加。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2019-05-10T16:00:00.000Z" title="2019-05-10T16:00:00.000Z">2019-05-11</time><span class="level-item">a minute lesen (Über 130 Worte)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019-05/11-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20manim%20%E5%88%B6%E4%BD%9C%E5%8A%A8%E7%94%BB/">如何使用 manim 制作动画</a></h1><div class="content"><h1 id="如何安装和使用中文"><a href="#如何安装和使用中文" class="headerlink" title="如何安装和使用中文"></a>如何安装和使用中文</h1><p>暂略。</p>
+<h1 id="如何使用-manim录入文字"><a href="#如何使用-manim录入文字" class="headerlink" title="如何使用 manim录入文字"></a>如何使用 manim录入文字</h1><p>国外有一个大佬写的教程，我挑着自己看不懂的部分翻译成中文。</p>
+<p>按照上面的东西进行搜索，现在基本可以做到弄一个简单的文字动画出来。</p>
+<blockquote>
+<p>链接：<a href="https://pan.baidu.com/s/1QMuiDPoL0q8CTsPi07IdhA">https://pan.baidu.com/s/1QMuiDPoL0q8CTsPi07IdhA</a><br>码塞克：7ggn </p>
+</blockquote>
+<h1 id="如何使用-manim-画图"><a href="#如何使用-manim-画图" class="headerlink" title="如何使用 manim 画图"></a>如何使用 manim 画图</h1><p>没看到这儿。</p>
+<h1 id="如何使用-manim-与-svg-图片交互"><a href="#如何使用-manim-与-svg-图片交互" class="headerlink" title="如何使用 manim 与 svg 图片交互"></a>如何使用 manim 与 svg 图片交互</h1><p>没看到这儿。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2019-03-29T01:20:41.000Z" title="2019-03-29T01:20:41.000Z">2019-03-29</time><span class="level-item">5 minutes lesen (Über 813 Worte)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019-03/29-%E5%BC%BA%E5%88%B6%E5%85%B3%E6%9C%BA%E4%B9%8B%E5%90%8E%E6%89%93%E5%BC%80%EF%BC%8C%E8%BF%98%E6%98%AF...%E6%AD%A3%E5%9C%A8%E5%85%B3%E6%9C%BA/">win10，强制关机之后打开还是...正在关机</a></h1><div class="content"><h1 id="强制关机之后打开还是…正在关机"><a href="#强制关机之后打开还是…正在关机" class="headerlink" title="强制关机之后打开还是…正在关机"></a>强制关机之后打开还是…正在关机</h1><p>win10系统有一点儿奇怪，它会主动收集一些用户的信息而不是针对特定的目标。会强制更新系统而不是由用户决定系统何时升级，这就导致了——你的电脑似乎不是你自己的，而是微软的。</p>
+<p>也许你会说隐私对我来说无所谓，但是我想使用win10或许都会遇到这样几种情况：</p>
+<ul>
+<li>你正在打游戏\写报告\跑数据\做分析，电脑突然重启了，数据丢了。</li>
+<li>下班了|图书馆闭关了，着急关机，电脑却慢吞吞的提示请不要断电，距离关机还有四个小时。长按电源键强制关机后打开还是正在关机。</li>
+<li>正在会议当中，数万名观众在台下看你的投影仪中你的电脑 ppt 演示稿渐渐消失，系统开始升级。</li>
+<li>其他类似的情况。</li>
+</ul>
+<p>更多详细的 win10 介绍，我想可以看这篇报道[^1]。</p>
+<h2 id="怎么办？"><a href="#怎么办？" class="headerlink" title="怎么办？"></a>怎么办？</h2><p>其实只有两个东西会对你的计算机造成伤害：update和快速启动。其余的东西只是对隐私的侵犯而不会对计算机的使用产生什么影响。</p>
+<p>操作指南：下载开源软件吧。有很多种类的windows spying broker，但是这一个是中文的。从下面的 github 地址中，找到 <a href="https://github.com/Nummer/Destroy-Windows-10-Spying/releases/download/2.2.2.2/DWS.exe">DWS.exe</a> 文件，或者使用源代码手动操作。</p>
+<p>软件：<a href="https://github.com/Nummer/Destroy-Windows-10-Spying/releases">https://github.com/Nummer/Destroy-Windows-10-Spying/releases</a></p>
+<p>操作1：</p>
+<p><img src="http://ww1.sinaimg.cn/large/ac3323ebly1g1kiktunlcj20j20jz0t5.jpg" alt=""></p>
+<p>操作2：</p>
+<p><img src="http://ww1.sinaimg.cn/large/ac3323ebly1g1kilbv89tj20pu0mcwey.jpg" alt=""></p>
+<p>将快速启动前面的勾去掉。</p>
+<h2 id="可是我的电脑已经打不开了。。"><a href="#可是我的电脑已经打不开了。。" class="headerlink" title="可是我的电脑已经打不开了。。"></a>可是我的电脑已经打不开了。。</h2><p>A：额，试试长按电源键强制关机。</p>
+<p>Q：试过了，强制关机之后打开，还是…正在关机。</p>
+<p>A：嗯，那么拔电池吧！</p>
+<p>Q：电池在哪里？</p>
+<p>A：找不到的话，电脑开着不要插电。</p>
+<p>Q：如果还是不行呢？</p>
+<p>A：额，还有几个高级选项，就有点儿说不清楚了</p>
+<ul>
+<li>BIOS 恢复默认设置。【需要百度自己的电脑型号+如何进入BIOS】</li>
+<li>windows 启动画面前按 F8 有高级启动设置。</li>
+<li>使用其他系统制作WINPE系统，BIOS设置从U盘启动，在PE系统里面解决问题，或者重装系统吧。<ul>
+<li>WinPE 10-8 Sergei Strelec：<a href="http://sergeistrelec.ru/winpe-10-8-sergei-strelec-english/">http://sergeistrelec.ru/winpe-10-8-sergei-strelec-english/</a></li>
+<li>微软原版PE：<a href="https://docs.microsoft.com/zh-cn/windows-hardware/get-started/adk-install">https://docs.microsoft.com/zh-cn/windows-hardware/get-started/adk-install</a></li>
+<li>微PE工具箱（较方便）：<a href="http://wepe.com.cn">http://wepe.com.cn</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="其他选择"><a href="#其他选择" class="headerlink" title="其他选择"></a>其他选择</h2><p>我不太懂，可能有人会需要吧，：）</p>
+<p><a href="https://github.com/crazy-max/WindowsSpyBlocker/releases">https://github.com/crazy-max/WindowsSpyBlocker/releases</a></p>
+<p><a href="https://www.winprivacy.de/english-home/">https://www.winprivacy.de/english-home/</a></p>
+<p>最后，建议每一个新的win10系统都用本文的方法操作一遍，将节省此后余生的很多时间。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2019-02-24T16:00:00.000Z" title="2019-02-24T16:00:00.000Z">2019-02-25</time><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><span> / </span><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/">软件指南</a></span><span class="level-item">14 minutes lesen (Über 2081 Worte)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019-02/25-CAD%20%E4%BD%8E%E7%BA%A7%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/">CAD 低级使用方式</a></h1><div class="content"><h1 id="CAD-低级使用方式"><a href="#CAD-低级使用方式" class="headerlink" title="CAD 低级使用方式"></a>CAD 低级使用方式</h1><h2 id="一、基础认知"><a href="#一、基础认知" class="headerlink" title="一、基础认知"></a>一、基础认知</h2><p>控制二维视图显示。</p>
+<p>【选项】“OP”</p>
+<p>【显示】</p>
+<ul>
+<li>十字光标大小 80</li>
+<li>颜色-【图纸与布局】-黑色</li>
+</ul>
+<p>【打开与保存】</p>
+<ul>
+<li>自动保存关闭</li>
+<li>每次保存创建备份副本关闭</li>
+<li>显示代理信息关闭</li>
+<li>不显示代理图形</li>
+</ul>
+<p>【选择集】</p>
+<ul>
+<li>拾取框大小：1/4</li>
+<li>选择集预览取消</li>
+</ul>
+<p>命令的基本调用方法：</p>
+<ul>
+<li>点击“直线”，鼠标直接点</li>
+<li>输入“L”，左手大拇指空格，鼠标直接点</li>
+</ul>
+<p>AutoCAD辅助绘图工具</p>
+<ul>
+<li>天正</li>
+<li>CAD迷你看图王，打开高版本的文件</li>
+</ul>
+<p>AutoCAD 精准坐标输入方法</p>
+<ul>
+<li>“L”，“Space”，“0,0,0”，“Space”</li>
+</ul>
+<h2 id="二、基本绘图命令"><a href="#二、基本绘图命令" class="headerlink" title="二、基本绘图命令"></a>二、基本绘图命令</h2><p>点与直线</p>
+<ul>
+<li>“L”“Space”“300”</li>
+<li>“L”“Space”“shift+&lt;”“45”</li>
+<li>“L”M1{3}“c” 闭合</li>
+<li>“PO”“Space”</li>
+<li>【格式】-【点样式】</li>
+<li>“div”“Space”M1“5”“Space” 等分</li>
+<li>“me”“Space”M1 “200”“Space” 定距等分</li>
+</ul>
+<p>圆</p>
+<ul>
+<li>“c”“Space”“100”“Space”</li>
+<li>“c”“Space”  M1 “Space” “d” “Space” “200”</li>
+<li>“c”“Space””3p”      “Space”M1{3}</li>
+<li>“c”“Space””2p”      “Space”M1{2}</li>
+<li>“a”“Space”M1{3}            3点确定一个圆弧 </li>
+<li>“a”“Space”“c”“Space”“起点”“L 弦长”“Space”“400”</li>
+</ul>
+<p>椭圆</p>
+<ul>
+<li>“EL”“Space”“端点1”“端点2”“半轴长度”</li>
+<li>“EL”“Space”“c”“Space”“中心点”“端点”“半轴长度”</li>
+<li>“EL”“Space”“a”“Space”“端点1”“端点2”“半轴长度”“起始角度”“结束角度” 画椭圆弧</li>
+<li>“EL”“Space”“a”“Space”“c”“端点”“半轴长度”“P”M1</li>
+</ul>
+<p>对象的捕捉与追踪</p>
+<ul>
+<li>【对象捕捉】设置</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/ac3323ebly1g0k94fko5ij20hk0afjwa.jpg" alt=""></p>
+<p>ctrl+M2 垂足（P）  画某条线的垂线</p>
+<ul>
+<li>延伸引线、垂直引线、X轴Y轴引线 （鼠标放在一个点，不要按M键向外挪）</li>
+<li>“tt”指定临时追踪点，可以画任意四条线，两两相交，交点的连线。</li>
+</ul>
+<h2 id="三、基本编辑命令"><a href="#三、基本编辑命令" class="headerlink" title="三、基本编辑命令"></a>三、基本编辑命令</h2><p>改变选择方式</p>
+<ul>
+<li>鼠标从左往右框=蓝色框：覆盖全部 = 选择。鼠标从右往左框=绿色框：覆盖部分 = 选择。</li>
+</ul>
+<p>改变对象位置</p>
+<ul>
+<li><p>“m”“基点”M1移动</p>
+</li>
+<li><p>“m”“基点”“距离”</p>
+<p>创建对象复制品</p>
+</li>
+<li><p>框选，ctrl+c，ctrl+v</p>
+</li>
+<li><p>“co”，“Space”“基点”“距离” </p>
+</li>
+</ul>
+<p>修改对象形状</p>
+<ul>
+<li>“tr”“边界”“对象”  修剪</li>
+<li>“ex”“边界”“对象” 延伸</li>
+<li>“br”“对象”“点”     打断直线</li>
+<li>“j”“对象1”“对象2”“Space” 合并直线</li>
+<li>“f”“对象1”“对象2” 倒角</li>
+<li>“f”“r”“角度”“对象1”“对象2”   圆角</li>
+<li>“cha”“d”“倒角距离1”“倒角距离2”“对象1”“对象2” 方角</li>
+</ul>
+<ul>
+<li>重复命令“Space” </li>
+</ul>
+<h2 id="四、图层与对象属性"><a href="#四、图层与对象属性" class="headerlink" title="四、图层与对象属性"></a>四、图层与对象属性</h2><p>【图层特性管理器】 </p>
+<ul>
+<li>Name 名字</li>
+<li>显示/隐藏 是否显示</li>
+<li>锁定 是否可编辑</li>
+<li>颜色 线形 </li>
+<li>打印机 可打印还是不可打印，可以在cad中显示</li>
+<li>冻结</li>
+</ul>
+<p>对象属性</p>
+<ul>
+<li>M1选择线“pr”“Space”</li>
+<li>M1选择线 ，ctrl+1</li>
+<li>文字、线特性不同</li>
+<li>虚线      linetype 改变空隙距离</li>
+</ul>
+<h2 id="五、高级绘图命令"><a href="#五、高级绘图命令" class="headerlink" title="五、高级绘图命令"></a>五、高级绘图命令</h2><p>等分对象</p>
+<ul>
+<li>圆 “div” “6” 等分</li>
+</ul>
+<p>构造线、射线</p>
+<ul>
+<li>“xl”“点1”“点2”构造线</li>
+<li>“xl”“h”“点1” 水平构造线</li>
+</ul>
+<p>多段线</p>
+<ul>
+<li>“pl”“点1”“点2”“点3”“点4”</li>
+<li>多段线上“pe”“j”组合成一个整体</li>
+</ul>
+<p>矩形与正多边形</p>
+<ul>
+<li>“rec”，“对角点1”“对角点2”</li>
+<li>“rec”，“d”“横向尺寸”“竖向尺寸”</li>
+<li>“pol”“n边形的n”“中心点”“内接圆、外接圆”</li>
+</ul>
+<p>圆环、实心圆</p>
+<ul>
+<li>“DO”“内径”“外径”</li>
+<li>“DO”“内径=0”“外径”</li>
+</ul>
+<p>多线：一次画多条线</p>
+<ul>
+<li>“ML”“（对正j、比例s、样式st）s”“比例”“起点”“终点”</li>
+<li>对正：默认是上，焦点在左边线的端点；改成无，焦点在两根线的中点。比如墙在外侧。 </li>
+<li>样式：宽度，比如墙是240</li>
+</ul>
+<p>样条曲线</p>
+<ul>
+<li>“SPL”“点1”“点2”“点3”“起点切向”“终点切向”</li>
+<li>“PL”“多段线”“PE”“S样条曲线”</li>
+</ul>
+<p>修订云线</p>
+<ul>
+<li>“revcloud”“（弧长、对象、样式）”M1点击起点 按住M1画</li>
+<li>“rec”“矩形”“revcloud”“o”</li>
+<li>弧长可以改的大一点（150）好看；设计变更常用</li>
+</ul>
+<p>住宅平面图</p>
+<p>柱子定位：xl，h，3000，xl，v，4000</p>
+<p>门：xl，中线，两边600，el 圆弧，门宽rec 20 ，1200</p>
+<p>窗户：rec，10,240 小矩形，辅助线 div 4份，直线连接</p>
+<h2 id="六、高级编辑命令"><a href="#六、高级编辑命令" class="headerlink" title="六、高级编辑命令"></a>六、高级编辑命令</h2><p>阵列</p>
+<ul>
+<li>ar “矩形阵列”“对象”“行列=个数”“偏移=距离”可以拾取，可以指定。</li>
+<li>ar “环形阵列”“中心点”“项目总数”“填充角度360”</li>
+<li>默认正值是从左下角到右上角走的。</li>
+<li><img src="http://ww1.sinaimg.cn/large/ac3323ebly1g0k967hlhvj207y07b75j.jpg" alt=""></li>
+</ul>
+<p>编辑<strong>多段线</strong></p>
+<ul>
+<li>“pe”“w”“100”指定宽度</li>
+<li>“pe”“L”线性生成，就是刷新一下</li>
+<li>“pe”“E”编辑顶点，打断、插入、移动、重生成</li>
+</ul>
+<p>样条曲线的编辑</p>
+<ul>
+<li>“SPE”“R”精度，意思是弧度，以直线画圆，默认是255个点画圆。</li>
+<li>反转</li>
+<li>闭合</li>
+</ul>
+<h2 id="七、图块"><a href="#七、图块" class="headerlink" title="七、图块"></a>七、图块</h2><ul>
+<li>“B”，随便输名称，其他默认。就像外部对象，只是引用了外观，编辑无法使用。</li>
+<li>“i”插入图块，“比例”（x,y,z）</li>
+<li>ctrl-c，ctrl-shift-v      粘贴为图块，名字自定义的。</li>
+<li>“BE”，编辑，改一个全部都变。</li>
+<li>“BE”，编辑，“基点参数”，可以改变基点位置。</li>
+</ul>
+<h2 id="八、填充、注释、表格"><a href="#八、填充、注释、表格" class="headerlink" title="八、填充、注释、表格"></a>八、填充、注释、表格</h2><p>图案填充、实体填充、区域覆盖</p>
+<ul>
+<li>“BH”，边界拾取点</li>
+<li>“BH”，对象拾取，选取多个填充，则填充块连在一起。</li>
+<li>“GD”实体填充，单色、双色</li>
+<li>“wipeout”（边框、多段线）区域覆盖；形成一个面域，可以覆盖别的图形。</li>
+</ul>
+<p>文字注释</p>
+<ul>
+<li>“dt”“高度”“旋转角度”单行文字 </li>
+<li>编辑文字：height、rotation</li>
+<li>“t”“Space”多行文字</li>
+</ul>
+<p>表格</p>
+<ul>
+<li>“tb”与excel类似</li>
+</ul>
+<h2 id="九、尺寸标注"><a href="#九、尺寸标注" class="headerlink" title="九、尺寸标注"></a>九、尺寸标注</h2><p>尺寸样式标注的设定</p>
+<ul>
+<li><p>“d”</p>
+</li>
+<li><p>【线】</p>
+</li>
+<li><ul>
+<li>线条颜色</li>
+<li>线型 线宽</li>
+<li>基线的间距：3.75</li>
+<li>尺寸界线：超出尺寸线 5；起点偏移量 3；</li>
+</ul>
+</li>
+<li><p>【符号和箭头】</p>
+</li>
+<li><ul>
+<li>箭头：建筑标记</li>
+<li>引线：实心闭合</li>
+</ul>
+</li>
+<li><p>【文字】</p>
+</li>
+<li><ul>
+<li>高度：3</li>
+<li>垂直上方、水平居中或靠尺寸界线</li>
+</ul>
+</li>
+<li><p>【调整】</p>
+</li>
+<li><ul>
+<li>全局比例：10.0；CAD注释文字看不清，可以调大比例。</li>
+</ul>
+</li>
+<li><p>【主单位】</p>
+</li>
+<li><ul>
+<li>Decimal</li>
+<li>精度：0</li>
+<li>比例因子：注意。</li>
+</ul>
+</li>
+<li><p>【换算单位】</p>
+</li>
+</ul>
+<p>尺寸标注类型</p>
+<ul>
+<li>“DLI”线性标注</li>
+<li>“DRA”弧度的描述</li>
+<li>“DAL”斜向标注</li>
+</ul>
+<p>尺寸编辑</p>
+<ul>
+<li>“ed”“Space”</li>
+</ul>
+<p>动作的使用：</p>
+<ul>
+<li>重复上一个命令，直接点“Space”</li>
+<li>先选择再输入命令</li>
+<li>先输入命令在选择（劳动量略大）</li>
+<li>右键选项可以改成上一个命令【选项】【用户系统配置】</li>
+</ul>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="librix123"></figure><p class="title is-size-4 is-block line-height-inherit">librix123</p><p class="is-size-6 is-block">无名之辈</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Perth</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">8</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Kategorien</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">10</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/librix" target="_blank" rel="noopener">Folgen</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/librix"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/librix123"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Weibo" href="https://weibo.com"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Kategorien</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/%E4%B9%A6%E5%8D%95/"><span class="level-start"><span class="level-item">书单</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="level-start"><span class="level-item">学习笔记</span></span><span class="level-end"><span class="level-item tag">5</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/"><span class="level-start"><span class="level-item">算法</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/"><span class="level-start"><span class="level-item">软件指南</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">Letzte Einträge</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-24T16:00:00.000Z">2020-04-25</time></p><p class="title is-6"><a class="link-muted" href="/2020-04/25-%E3%80%90%E5%88%B7%E9%A2%98%E3%80%91%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/">【刷题】算法导论课后习题</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a> / <a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/">算法</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-18T16:00:00.000Z">2020-03-19</time></p><p class="title is-6"><a class="link-muted" href="/2020-03/19-Excel%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">Excel学习笔记-1</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a> / <a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/">软件指南</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-14T16:00:00.000Z">2020-03-15</time></p><p class="title is-6"><a class="link-muted" href="/2020-03/15-Excel%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">Excel学习笔记-1</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a> / <a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/">软件指南</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-10-28T22:20:41.000Z">2019-10-29</time></p><p class="title is-6"><a class="link-muted" href="/2019-10/29-%E3%80%90%E4%B9%A6%E5%8D%95%E3%80%91%E5%B2%A9%E5%9C%9F%E5%B7%A5%E7%A8%8B/">【书单】岩土工程</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E4%B9%A6%E5%8D%95/">书单</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-06-03T16:00:00.000Z">2019-06-04</time></p><p class="title is-6"><a class="link-muted" href="/2019-06/04-yjk%E4%BC%98%E5%8C%96%E8%AE%BE%E8%AE%A1/">yjk优化设计</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a> / <a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AF%E4%BB%B6%E6%8C%87%E5%8D%97/">软件指南</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Archive</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/04/"><span class="level-start"><span class="level-item">April 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/03/"><span class="level-start"><span class="level-item">March 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/10/"><span class="level-start"><span class="level-item">October 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/06/"><span class="level-start"><span class="level-item">June 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/05/"><span class="level-start"><span class="level-item">May 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/03/"><span class="level-start"><span class="level-item">March 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/02/"><span class="level-start"><span class="level-item">February 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/CAD/"><span class="tag">CAD</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Excel/"><span class="tag">Excel</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/yjk/"><span class="tag">yjk</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%88%9D%E5%AD%A6%E8%80%85/"><span class="tag">初学者</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9C%9F%E5%8A%9B%E5%AD%A6/"><span class="tag">土力学</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9C%9F%E6%9C%A8/"><span class="tag">土木</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B2%A9%E5%9C%9F%E5%B7%A5%E7%A8%8B/"><span class="tag">岩土工程</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AC%94%E8%AE%B0/"><span class="tag">笔记</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AF%BB%E4%B9%A6/"><span class="tag">读书</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe to Updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">项脊轩</a><p class="size-small"><span>&copy; 2020 Librix123</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-Hans");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://librix.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Zurück nach oben" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Tippen Sie etwas..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Tippen Sie etwas...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Kategorien","tags":"Tags"});
+        });</script></body></html>
